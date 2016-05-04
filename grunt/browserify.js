@@ -6,7 +6,7 @@ module.exports = {
     files: [{
       "expand": true,
       "cwd": "app/assets/js/",
-      "src": ["**/*.js"],
+      "src": ["application.js"],
       "dest": "dist/assets/js/",
       "ext": ".js"
     }]

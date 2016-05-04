@@ -4,7 +4,12 @@ block append css
   link(rel="stylesheet" href="assets/css/pages/index/index.css")
 
 block container
-  aside.panel.panel-left.active
+  secion#app-container
+  script(type="text/template")#app-template  
+    aside.panel.panel-left.active
+    aside.panel-content-container.panel.panel-right
+  
+  script(type="text/template")#new-event-template
     section.panel-content-container.form-container
       form.new-event-form
         div.field-container
@@ -28,5 +33,6 @@ block container
           div.input-container
             input(type="text")  
         input(type="submit" value="Salvar").btn
-  aside.panel-content-container.panel.panel-right
+  
+  script(type="text/template")#events-list-template
     section.events-list-container
