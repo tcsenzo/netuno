@@ -1,0 +1,25 @@
+@require '_partials/_variables'
+
+body, html
+  padding: 0
+  margin: 0
+
+.container
+  position: relative
+.panel
+  position: absolute
+  background-color: #ccc
+  height: 300px
+  width: 50%
+  box-sizing: border-box
+  top: 0
+  transition: all 0.2s ease
+  padding: 15px 20px
+  &.active
+    box-shadow: 0 0 15px #3c3c3c
+    width: 75%
+    z-index: 2
+  &.panel-left
+    left: 0
+  &.panel-right
+    right: 0

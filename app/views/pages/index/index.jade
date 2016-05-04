@@ -1,0 +1,32 @@
+extends /base
+
+block append css
+  link(rel="stylesheet" href="assets/css/pages/index/index.css")
+
+block container
+  aside.panel.panel-left.active
+    section.panel-content-container.form-container
+      form.new-event-form
+        div.field-container
+          label= "Nome"
+          div.input-container
+            input(type="text")  
+        div.field-container
+          label= "Preco"
+          div.input-container
+            input(type="text")  
+        div.field-container
+          label= "Descricao"
+          div.input-container
+            input(type="text")  
+        div.field-container
+          label= "Local"
+          div.input-container
+            input(type="text")  
+        div.field-container
+          label= "Imagem"
+          div.input-container
+            input(type="text")  
+        input(type="submit" value="Salvar").btn
+  aside.panel-content-container.panel.panel-right
+    section.events-list-container
