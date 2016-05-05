@@ -12,11 +12,7 @@ let collection = Backbone.Collection.extend({
   },
 
   initialize: function() {
-    this.fetch({
-      success: function(data) {
-        console.log(data);
-      }
-    })
+    return this;
   }
 });
 
