@@ -1,7 +1,8 @@
 let view = Backbone.View.extend({
   template: _.template($(`#events-list-template`).html()),
 
-  initialize: function() {
+  initialize: function(options) {
+    this.collection = options.collection;
     return this;
   },
   render: function() {
