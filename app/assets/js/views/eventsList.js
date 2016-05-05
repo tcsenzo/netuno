@@ -1,4 +1,4 @@
-import eventView from `./event`;
+import eventView from './event';
 
 let view = Backbone.View.extend({
   template: _.template($(`#events-list-template`).html()),
@@ -14,7 +14,7 @@ let view = Backbone.View.extend({
 
     that.collection.each(function(eventModel) {
       let $event = new eventView({
-        `event`: eventModel
+        'event': eventModel
       })
       .render();
       that.$el.append($event);

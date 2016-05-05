@@ -6,7 +6,7 @@ let collection = Backbone.Collection.extend({
   model: model,
 
   sync: function(method, collection, options) {
-    options.dataType = "jsonp";
+    options.dataType = "json";
     options.jsonpCallback = "jsonpCallback";
     return Backbone.sync(method, collection, options);
   },

@@ -33,7 +33,7 @@ let view = Backbone.View.extend({
   renderEventsList: function(collection) {
     let that = this;
     that.$eventsListView = new eventsListView({
-      `collection`: collection
+      'collection': collection
     })
     .render();
     that.$el.find(`.panel-right`).append(that.$eventsListView);
