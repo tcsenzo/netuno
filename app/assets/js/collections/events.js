@@ -9,7 +9,6 @@ let collection = Backbone.Collection.extend({
   },
 
   initialize: function() {
-    console.log("que");
     return this;
   }
 });

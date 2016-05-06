@@ -23,12 +23,12 @@ let view = Backbone.View.extend({
         event = new eventModel();
 
     event.save(formData, {
-      success: that.onModelSave
+      dataType: `text`,
+      success: that.onModelSave.bind(this)
     });
-    that.trigger(`model-saved`, {'model': event});
   },
   onModelSave: function(model, response, options) {
-    console.log(`saved`, response);
+    this.trigger(`model-saved`, {'model': event});
   }
 });
 
