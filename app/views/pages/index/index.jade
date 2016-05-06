@@ -31,7 +31,10 @@ block container
         input(type="submit" value="Salvar").btn
   
   script(type="text/template")#events-list-template
-    section.events-list-container
+    ul.events
     
   script(type="text/template")#event-template
-    div.event
+    p.name!= '<%= name %>'
+    p.description!= '<%= description %>'
+    p.price!= '<%= price %>'
+    p.date!= '<%= scheduled_date %>'

@@ -2,8 +2,8 @@ import eventView from './event';
 
 let view = Backbone.View.extend({
   template: _.template($(`#events-list-template`).html()),
-  tagName: `ul`,
-  className: `events`,
+  tagName: `section`,
+  className: `panel-content-container panel panel-right`,
 
   initialize: function(options) {
     this.collection = options.collection;
@@ -11,15 +11,15 @@ let view = Backbone.View.extend({
   },
   render: function() {
     let that = this;
+    that.$el.html(that.template());
 
     that.collection.each(function(eventModel) {
       let $event = new eventView({
-        'event': eventModel
+        'eventModel': eventModel
       })
       .render();
-      that.$el.append($event);
+      that.$el.find(`.events`).append($event);
     });
-    that.$el.html(that.template());
     return that.$el;
   }
 });

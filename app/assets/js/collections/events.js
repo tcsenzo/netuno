@@ -4,14 +4,12 @@ import model from '../models/event';
 let collection = Backbone.Collection.extend({
   url: `${configs.apiUrl}/events`,
   model: model,
-
-  sync: function(method, collection, options) {
-    options.dataType = "jsonp";
-    options.jsonpCallback = "cb";
-    return Backbone.sync(method, collection, options);
+  parse: function (data) {
+    return data.events;
   },
 
   initialize: function() {
+    console.log("que");
     return this;
   }
 });

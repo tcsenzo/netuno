@@ -4,10 +4,6 @@ let model = Backbone.Model.extend({
   urlRoot: `${configs.apiUrl}/event`,
   idAttribute: 'id',
 
-  initialize: function() {
-    console.log('initialized');
-  },
-
   methodToURL: {
     'read': `${configs.apiUrl}/event`,
     'create': `${configs.apiUrl}/event/create`,
