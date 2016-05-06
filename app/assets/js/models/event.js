@@ -6,6 +6,20 @@ let model = Backbone.Model.extend({
 
   initialize: function() {
     console.log('initialized');
+  },
+
+  methodToURL: {
+    'read': `${configs.apiUrl}/event`,
+    'create': `${configs.apiUrl}/event/create`,
+    'update': `${configs.apiUrl}/event/update`,
+    'delete': `${configs.apiUrl}/event/delete`
+  },
+
+  sync: function(method, model, options) {
+    options = options || {};
+    options.url = model.methodToURL[method.toLowerCase()];
+
+    return Backbone.sync.apply(this, arguments);
   }
 
 });

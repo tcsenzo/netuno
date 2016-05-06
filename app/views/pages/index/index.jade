@@ -15,23 +15,19 @@ block container
         div.field-container
           label= "Nome"
           div.input-container
-            input(type="text", name="name0")  
+            input(type="text", name="name")  
         div.field-container
-          label= "Preco"
+          label= "Descrição"
           div.input-container
-            input(type="text", name="name1")  
+            input(type="text", name="description")  
         div.field-container
-          label= "Descricao"
+          label= "Preço"
           div.input-container
-            input(type="text", name="name2")  
+            input(type="text", name="price")  
         div.field-container
-          label= "Local"
+          label= "Data"
           div.input-container
-            input(type="text", name="name3")  
-        div.field-container
-          label= "Imagem"
-          div.input-container
-            input(type="text", name="name4")  
+            input(type="text", name="scheduled_date")  
         input(type="submit" value="Salvar").btn
   
   script(type="text/template")#events-list-template

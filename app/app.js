@@ -3,6 +3,7 @@ import Router from './router';
 import express from 'express';
 import http from 'http';
 import i18n from 'i18n';
+import bodyParser from 'body-parser';
 
 class App {
 	constructor() {
@@ -32,6 +33,8 @@ class App {
 		app.locals.basedir = `${__dirname}/../app/views`;
     app.use(i18n.init);
 		app.use('/assets', express.static(`${__dirname}/assets`));
+		app.use(bodyParser.json());
+		app.use(bodyParser.urlencoded({ extended: true }));
 	}
 
 	startServer(server) {

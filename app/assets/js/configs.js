@@ -1,5 +1,5 @@
 let configs = {
-  apiUrl: "http://localhost:8080"
+  apiUrl: "http://localhost:4001/api"
 }
 
 export default configs;
