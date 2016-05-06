@@ -14,15 +14,20 @@ let view = Backbone.View.extend({
   },
 
   events: {
-    "submit .new-event-form": "handleFormSubmit",
+    "submit .new-event-form": "onFormSubmit",
   },
-  handleFormSubmit: function(e) {
+  onFormSubmit: function(e) {
     e.preventDefault();
     let that = this,
         formData = helpers.getFormData(that.$el.find(`.new-event-form`)),
-        event = new eventModel(formData);
+        event = new eventModel();
 
-    event.save();
+    event.save(formData, {
+      success: that.onModelSave
+    });
+  },
+  onModelSave: function(model, response, options) {
+    console.log(`saved`, response);
   }
 });
 
