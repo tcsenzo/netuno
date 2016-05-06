@@ -3,6 +3,8 @@ import eventModel from '../models/event';
 
 let view = Backbone.View.extend({
   template: _.template($(`#new-event-template`).html()),
+  tagName: `section`,
+  className: `panel-content-container form-container`,
 
   initialize: function() {
     return this;

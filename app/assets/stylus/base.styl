@@ -24,7 +24,19 @@ body, html
     box-shadow: 0 0 15px #3c3c3c
     width: 75%
     z-index: 2
+  &:not(.active)
+    .overlay
+      display: block
   &.panel-left
     left: 0
+    .panel-content-container
+      float: right
   &.panel-right
     right: 0
+    .panel-content-container
+      float: left
+
+  .panel-content-container
+    width: 700px
+    .overlay
+      position: absolute
