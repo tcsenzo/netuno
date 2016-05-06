@@ -6,10 +6,11 @@ body, html
   height: 100%
 
 .page-wrapper
-  height: 100%
-.container
   position: relative
   height: 100%
+.container
+  height: 100%
+  overflow: hidden
 .panel
   position: absolute
   background-color: #ccc
@@ -18,7 +19,7 @@ body, html
   box-sizing: border-box
   top: 0
   transition: all 0.2s ease
-  padding: 15px 20px
+  padding: 20px
   overflow: scroll
   &.active
     box-shadow: 0 0 15px #3c3c3c
@@ -40,3 +41,10 @@ body, html
     width: 700px
     .overlay
       position: absolute
+
+  &.panel-right
+    .events
+      margin: 0
+      padding: 0
+      .event
+        list-style: none

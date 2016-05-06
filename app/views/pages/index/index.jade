@@ -5,39 +5,7 @@ block append css
 
 block container
   secion#app-container
-  script(type="text/template")#app-template  
-    aside.panel.panel-left.active
-    aside.panel.panel-right
-  
-  script(type="text/template")#new-event-template
-    div.overlay
-    div.loader
-    form.new-event-form
-      div.field-container
-        label= "Nome"
-        div.input-container
-          input(type="text", name="name")  
-      div.field-container
-        label= "Descrição"
-        div.input-container
-          input(type="text", name="description")  
-      div.field-container
-        label= "Preço"
-        div.input-container
-          input(type="text", name="price")  
-      div.field-container
-        label= "Data"
-        div.input-container
-          input(type="text", name="scheduled_date")  
-      input(type="submit" value="Salvar").btn
-  
-  script(type="text/template")#events-list-template
-    div.overlay
-    div.loader
-    ul.events
-    
-  script(type="text/template")#event-template
-    p.name!= '<%= name %>'
-    p.description!= '<%= description %>'
-    p.price!= '<%= price %>'
-    p.date!= '<%= scheduled_date %>'
+  include ./_app-template
+  include ./_new-event-template.jade
+  include ./_events-list-template.jade
+  include ./_event-template.jade

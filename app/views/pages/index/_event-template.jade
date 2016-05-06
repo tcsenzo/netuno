@@ -1,0 +1,9 @@
+script(type="text/template")#event-template
+  strong= "Evento: "
+  p.name!= '<%= name %>'
+  strong= "Descrição: "
+  p.description!= '<%= description %>'
+  strong= "Preço: "
+  p.price!= '<%= price %>'
+  strong= "Data: "
+  p.date!= '<%= scheduled_date %>'

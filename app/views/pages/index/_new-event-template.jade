@@ -1,0 +1,21 @@
+script(type="text/template")#new-event-template
+  div.overlay
+  div.loader
+  form.new-event-form
+    div.field-container
+      label= "Nome"
+      div.input-container
+        input(type="text", name="name")  
+    div.field-container
+      label= "Descrição"
+      div.input-container
+        input(type="text", name="description")  
+    div.field-container
+      label= "Preço"
+      div.input-container
+        input(type="text", name="price")  
+    div.field-container
+      label= "Data"
+      div.input-container
+        input(type="text", name="scheduled_date")  
+    input(type="submit" value="Salvar").btn
