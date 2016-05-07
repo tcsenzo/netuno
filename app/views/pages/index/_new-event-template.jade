@@ -4,8 +4,8 @@ script(type="text/template")#new-event-template
   h1.logo= "Qettal"
   h2.subtitle= "Gerenciamento de eventos"
   div.new-event-form-container
-    form.new-event-form
-      div.field-container
+    form.new-event-form.sz-form
+      div.field-container.field-container-full
         label= "Nome"
         div.input-container
           input(type="text", name="name")  
@@ -13,13 +13,18 @@ script(type="text/template")#new-event-template
         label= "Descrição"
         div.input-container
           input(type="text", name="description")  
-      div.field-container
+      div.field-container.field-container-sm
         label= "Preço"
         div.input-container
           input(type="text", name="price")  
-      div.field-container
-        label= "Data"
-        div.input-container
-          input(type="text", name="scheduled_date") 
+      div.field-container-double.field-container-full
+        div.field-container.field-container-sm
+          label= "Data"
+          div.input-container
+            input(type="text", name="scheduled_date") 
+        div.field-container.field-container-sm
+          label= "Hora"
+          div.input-container
+            input(type="text", name="scheduled_hour") 
       div.form-options 
         input(type="submit" value="Salvar").btn

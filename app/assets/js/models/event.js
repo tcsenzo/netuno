@@ -16,6 +16,25 @@ let model = Backbone.Model.extend({
     options.url = model.methodToURL[method.toLowerCase()];
 
     return Backbone.sync.apply(this, arguments);
+  },
+
+  parse: function(data) {
+    return this.beaultify(data);
+  },
+
+  beaultify: function(data) {
+    data.price = `R$ ${parseFloat(data.price).toFixed(2).replace(`.`, `,`)}`;
+
+    let dt = new Date(data.scheduled_date),
+        day = dt.getDate() < 10 ? `0${dt.getDate().toString()}` : dt.getDate().toString(),
+        month = (dt.getMonth() + 1) < 10 ? `0${dt.getMonth().toString()}` : dt.getMonth().toString(),
+        year = dt.getFullYear().toString(),
+        hour = dt.getUTCHours() < 10 ? `0${dt.getUTCHours().toString()}` : dt.getUTCHours().toString(),
+        min = dt.getUTCMinutes() < 10 ? `0${dt.getUTCMinutes().toString()}` : dt.getUTCMinutes().toString(),
+        formattedDate = `${day}/${month}/${year} - ${hour}:${min}`;
+    data.scheduled_date = formattedDate;
+
+    return data;
   }
 
 });

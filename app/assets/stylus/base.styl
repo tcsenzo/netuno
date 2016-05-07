@@ -19,14 +19,17 @@ ul, li
   padding: 20px
   text-align: center
   box-sizing: border-box
+  color: #F6E3FF
+  background-color #4D4C4E
+  border-right: 3px solid #4D1099
 
-.new-event-form
-  .field-container
-    text-align: left
-  .input-container input
-    width: 100%
-  .form-options
-    text-align: right
+  .new-event-form
+    .field-container
+      text-align: left
+    .input-container input
+      width: 100%
+    .form-options
+      text-align: right
 
 .main-section
   position: absolute
@@ -36,16 +39,87 @@ ul, li
   box-sizing: border-box
   overflow-y: scroll
   z-index: 1
-  .events-list-container
-    padding: 20px 20px 85px
+  background-color #F3EFFB
+.events-list-container
+  padding: 20px 20px 85px
+  .events .event
+    box-sizing: border-box
+    background-color: #f7f7f7
+    box-shadow: 0 0 4px #0e0e0e
+    padding: 15px
+    height: 125px
+    margin-bottom: 15px
+    overflow: hidden
+    position: relative
+    .event-image-container
+      left: 0
+      top: 0
+      width: 160px
+      height: 100%
+      background-color: #ccc
+      position: absolute
+    .event-info
+      margin-left: 160px
+      .name, .description
+        margin: 0 0 10px
+      .description
+        max-height: 36px
+        text-overflow: ellipsis
+        white-space: nowrap
+        overflow: hidden
+      .price
+        margin-right: 50px
+
   .events-options
     position: fixed
     bottom: 0
     width: 100%
     left: 0
     text-align: right
-    background-color #bbb
+    background-color #4D1099
     z-index: 2
     padding: 15px 20px
     box-sizing: border-box
-    box-shadow: 0 -2px 2px #6d6d6d
+    box-shadow: 0 -2px 2px #0e0e0e
+
+
+
+
+
+
+
+.sz-form
+  .field-container
+    margin-bottom: 15px
+  .field-container-sm
+    width: 120px
+  .field-container-md
+    width: 280px
+  .field-container-full
+    width: 100%
+
+  .field-container-double
+    overflow: hidden
+    .field-container
+      float: left
+      margin-right: 15px
+      &:last-child
+        margin-right: 0
+    .field-container-md
+      width: 50%
+    .field-container-lg
+      width: 75%
+    .field-container-sm
+      width: 25%
+  input[type="text"]
+    border: none
+    box-sizing: border-box
+    background-color: #737373
+    default-border-radius()
+    default-transition()
+    height: 30px
+    color: #F6E3FF
+    font-size: 17px
+    &:focus
+      border-bottom: 2px solid #4D1099
+      outline: none

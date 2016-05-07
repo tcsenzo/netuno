@@ -1,6 +1,6 @@
 import request from 'request';
 
-export default class Index {
+export default class Event {
   static all(res) {
     request.get('http://localhost:8080/events', (error, response, body) => {
       res.json(JSON.parse(body));
