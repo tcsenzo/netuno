@@ -1,21 +1,25 @@
 script(type="text/template")#new-event-template
   div.overlay
   div.loader
-  form.new-event-form
-    div.field-container
-      label= "Nome"
-      div.input-container
-        input(type="text", name="name")  
-    div.field-container
-      label= "Descrição"
-      div.input-container
-        input(type="text", name="description")  
-    div.field-container
-      label= "Preço"
-      div.input-container
-        input(type="text", name="price")  
-    div.field-container
-      label= "Data"
-      div.input-container
-        input(type="text", name="scheduled_date")  
-    input(type="submit" value="Salvar").btn
+  h1.logo= "Qettal"
+  h2.subtitle= "Gerenciamento de eventos"
+  div.new-event-form-container
+    form.new-event-form
+      div.field-container
+        label= "Nome"
+        div.input-container
+          input(type="text", name="name")  
+      div.field-container
+        label= "Descrição"
+        div.input-container
+          input(type="text", name="description")  
+      div.field-container
+        label= "Preço"
+        div.input-container
+          input(type="text", name="price")  
+      div.field-container
+        label= "Data"
+        div.input-container
+          input(type="text", name="scheduled_date") 
+      div.form-options 
+        input(type="submit" value="Salvar").btn
