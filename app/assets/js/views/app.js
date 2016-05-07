@@ -32,7 +32,7 @@ let view = Backbone.View.extend({
     that.eventsListView = new eventsListView({
       'collection': collection
     });
-    that.$el.find(`.panel-right`).html(that.eventsListView.render());
+    that.$el.find(`.main-section`).html(that.eventsListView.render());
   },
   showLoader: function() {
 

@@ -3,7 +3,7 @@ import eventView from './event';
 let view = Backbone.View.extend({
   template: _.template($(`#events-list-template`).html()),
   tagName: `section`,
-  className: `panel-content-container events-list-container`,
+  className: `events-list-container`,
 
   initialize: function(options) {
     this.collection = options.collection;
