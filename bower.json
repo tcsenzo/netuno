@@ -13,6 +13,7 @@
     "jquery": "^2.2.2",
     "bootstrap": "^3.3.6",
     "backbone": "^1.3.3",
-    "jquery-mask-plugin": "https://github.com/igorescobar/jQuery-Mask-Plugin.git#^1.14.0"
+    "jquery-mask-plugin": "https://github.com/igorescobar/jQuery-Mask-Plugin.git#^1.14.0",
+    "moment": "^2.13.0"
   }
 }

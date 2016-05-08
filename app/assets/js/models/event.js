@@ -17,13 +17,22 @@ let model = Backbone.Model.extend({
     return Backbone.sync.apply(this, arguments);
   },
   save: function(attrs, options) {
-    debugger
+    attrs = this.uglify(attrs);
+    delete attrs.scheduled_hour;
     Backbone.Model.prototype.save.call(this, attrs, options);
   },
   parse: function(data) {
+    if (data === "") {
+      return data;
+    }
     return this.beaultify(data);
   },
+  uglify: function(attrs) {
+    attrs.price = parseFloat(attrs.price.replace(',', '.'));
+    attrs.scheduled_date = moment(`${attrs.scheduled_date} ${attrs.scheduled_hour}`, "DD/MM/YYYY HH:mm").format("YYYY-MM-DDTHH:mm");
 
+    return attrs;
+  },
   beaultify: function(data) {
     data.price = `R$ ${parseFloat(data.price).toFixed(2).replace(`.`, `,`)}`;
 
