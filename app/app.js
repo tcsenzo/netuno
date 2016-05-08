@@ -34,6 +34,7 @@ class App {
 		app.locals.basedir = `${__dirname}/../app/views`;
     app.use(i18n.init);
 		app.use('/assets', express.static(`${__dirname}/assets`));
+		app.use('/images', express.static(`${__dirname}/../app/assets/images`));
 		app.use(bodyParser.json());
 		app.use(bodyParser.urlencoded({ extended: true }));
 		app.use(morgan('dev'))

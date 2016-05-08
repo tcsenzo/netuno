@@ -1,10 +1,11 @@
 script(type="text/template")#events-list-template
   div.overlay
-  div.loader
+    div.loader
+      img(src="/images/loader.gif")
   <% if (!empty) { %>
   h2.list-title= "Lista de eventos"
   ul.events
-  div.events-options
+  div.events-options.animate
     a.btn(href="#")#notify-send= "Enviar notificação"
   <% } else { %>
   h2.list-title= "Nenhum evento salvo"

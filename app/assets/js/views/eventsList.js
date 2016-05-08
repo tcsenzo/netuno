@@ -9,7 +9,10 @@ let view = Backbone.View.extend({
   },
 
   initialize: function(options) {
-    this.collection = options.collection;
+    let that = this;
+    that.collection = options.collection;
+    that.bind(`fetch-collection`, that.showLoader.bind(this));
+    that.bind(`fetched`, that.hideLoader.bind(this));
     return this;
   },
   render: function() {
@@ -31,9 +34,17 @@ let view = Backbone.View.extend({
 
   notifySend: function(e) {
     e.preventDefault();
+    let that = this;
+    that.showLoader();
     $.post('/api/notify-send', function(data) {
-      console.log('foi', data);
+      that.hideLoader();
     });
+  },
+  showLoader: function() {
+    this.$el.find(`.overlay, .loader`).show();
+  },
+  hideLoader: function() {
+    this.$el.find(`.overlay, .loader`).hide();
   }
 });
 

@@ -11,7 +11,8 @@ let view = Backbone.View.extend({
     that.showLoader();
     that.renderEventsForm();
 
-    this.eventsCollection = new eventsCollection();
+    that.eventsCollection = new eventsCollection();
+    that.renderEventsList(that.eventsCollection);
     that.fetchCollection();
 
     that.binds();
@@ -39,9 +40,11 @@ let view = Backbone.View.extend({
   },
   fetchCollection: function() {
     let that = this;
+    that.eventsListView.trigger('fetch-collection');
     that.eventsCollection.fetch({
       success: function(collection) {
         that.renderEventsList(collection);
+        //that.eventsListView.trigger('fetched');
       }
     });
   },
