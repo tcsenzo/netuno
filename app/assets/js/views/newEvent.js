@@ -37,6 +37,7 @@ let view = Backbone.View.extend({
   },
   onModelSave: function(model, response, options) {
     this.trigger(`model-saved`, {'model': event});
+    this.$el.find(`.new-event-form input[type="text"], .new-event-form textarea`).val(``);
   },
   setMasks: function() {
     let that = this;
