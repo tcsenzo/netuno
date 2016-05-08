@@ -10,14 +10,16 @@ let model = Backbone.Model.extend({
     'update': `${configs.apiUrl}/event/update`,
     'delete': `${configs.apiUrl}/event/delete`
   },
-
   sync: function(method, model, options) {
     options = options || {};
     options.url = model.methodToURL[method.toLowerCase()];
 
     return Backbone.sync.apply(this, arguments);
   },
-
+  save: function(attrs, options) {
+    debugger
+    Backbone.Model.prototype.save.call(this, attrs, options);
+  },
   parse: function(data) {
     return this.beaultify(data);
   },

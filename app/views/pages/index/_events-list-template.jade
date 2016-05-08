@@ -1,7 +1,11 @@
 script(type="text/template")#events-list-template
   div.overlay
   div.loader
+  <% if (!empty) { %>
   h2.list-title= "Lista de eventos"
   ul.events
   div.events-options
     a.btn(href="#")= "Enviar notificação"
+  <% } else { %>
+  h2.list-title= "Nenhum evento salvo"
+  <% } %>

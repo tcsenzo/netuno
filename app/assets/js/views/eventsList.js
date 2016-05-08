@@ -10,16 +10,19 @@ let view = Backbone.View.extend({
     return this;
   },
   render: function() {
-    let that = this;
-    that.$el.html(that.template());
+    let that = this,
+        empty = that.collection.size() > 0 ? false : true;
+    that.$el.html(that.template({'empty' : empty}));
 
-    that.collection.each(function(eventModel) {
-      let $event = new eventView({
-        'eventModel': eventModel
-      })
-      .render();
-      that.$el.find(`.events`).append($event);
-    });
+    if (!empty) {
+      that.collection.each(function(eventModel) {
+        let $event = new eventView({
+          'eventModel': eventModel
+        })
+        .render();
+        that.$el.find(`.events`).append($event);
+      });
+    }
     return that.$el;
   }
 });

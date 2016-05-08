@@ -5,13 +5,17 @@ let view = Backbone.View.extend({
   template: _.template($(`#new-event-template`).html()),
   tagName: `section`,
   className: `left-panel-content-container`,
+  masks: {
+    'price': `#.##0,00`
+  },
 
   initialize: function() {
     return this;
   },
   render: function() {
     let that = this;
-    this.$el.html(that.template());
+    that.$el.html(that.template());
+    that.setMasks();
     return this.$el;
   },
 
@@ -31,6 +35,10 @@ let view = Backbone.View.extend({
   },
   onModelSave: function(model, response, options) {
     this.trigger(`model-saved`, {'model': event});
+  },
+  setMasks: function() {
+    let that = this;
+    that.$el.find(`input[name="price"]`).mask(that.masks.price, {reverse: true});
   }
 });
 
