@@ -27,6 +27,7 @@
     "jeet": "^6.1.2",
     "load-grunt-config": "^0.19.1",
     "load-grunt-tasks": "^3.4.1",
+    "morgan": "^1.7.0",
     "querystring": "^0.2.0",
     "request": "^2.72.0",
     "rupture": "^0.6.1",

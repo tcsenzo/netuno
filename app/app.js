@@ -4,6 +4,7 @@ import express from 'express';
 import http from 'http';
 import i18n from 'i18n';
 import bodyParser from 'body-parser';
+import morgan from 'morgan';
 
 class App {
 	constructor() {
@@ -35,6 +36,7 @@ class App {
 		app.use('/assets', express.static(`${__dirname}/assets`));
 		app.use(bodyParser.json());
 		app.use(bodyParser.urlencoded({ extended: true }));
+		app.use(morgan('dev'))
 	}
 
 	startServer(server) {
