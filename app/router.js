@@ -10,6 +10,6 @@ export default class Router {
 		app.get('/api/event/:id', (req, res) => ApiEventController.show(res, req.params.id));
 		app.post('/api/event/create', (req, res) => ApiEventController.create(res, req.body));
 
-		app.post('/api/send-notification', (req, res) => NotificationSenderController.send(res));
+		app.post('/api/notify-send', (req, res) => NotificationSenderController.send(res));
 	}
 }

@@ -4,6 +4,9 @@ let view = Backbone.View.extend({
   template: _.template($(`#events-list-template`).html()),
   tagName: `section`,
   className: `events-list-container`,
+  events: {
+    'click #notify-send': 'notifySend'
+  },
 
   initialize: function(options) {
     this.collection = options.collection;
@@ -24,6 +27,13 @@ let view = Backbone.View.extend({
       });
     }
     return that.$el;
+  },
+
+  notifySend: function(e) {
+    e.preventDefault();
+    $.post('/api/notify-send', function(data) {
+      console.log('foi', data);
+    });
   }
 });
 

@@ -5,7 +5,7 @@ script(type="text/template")#events-list-template
   h2.list-title= "Lista de eventos"
   ul.events
   div.events-options
-    a.btn(href="#")= "Enviar notificação"
+    a.btn(href="#")#notify-send= "Enviar notificação"
   <% } else { %>
   h2.list-title= "Nenhum evento salvo"
   <% } %>
