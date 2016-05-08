@@ -6,7 +6,9 @@ let view = Backbone.View.extend({
   tagName: `section`,
   className: `left-panel-content-container`,
   masks: {
-    'price': `#.##0,00`
+    'price': `#.##0,00`,
+    'date': `00/00/0000`,
+    'time': `00:00`
   },
 
   initialize: function() {
@@ -38,7 +40,10 @@ let view = Backbone.View.extend({
   },
   setMasks: function() {
     let that = this;
+    // todo: melhorar isso aqui
     that.$el.find(`input[name="price"]`).mask(that.masks.price, {reverse: true});
+    that.$el.find(`input[name="scheduled_date"]`).mask(that.masks.date);
+    that.$el.find(`input[name="scheduled_hour"]`).mask(that.masks.time);
   }
 });
 
