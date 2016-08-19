@@ -1,5 +1,7 @@
-export default class Index {
-  static index(res) {
+class Index {
+  index(res) {
     res.render('index');
   }
 }
+
+module.exports = new Index();

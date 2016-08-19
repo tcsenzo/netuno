@@ -1,8 +1,8 @@
-import IndexController from './controllers/index';
-import ApiEventController from './controllers/api/event';
-import NotificationSenderController from './controllers/api/notificationSender';
+let IndexController = require('./controllers/index'),
+		ApiEventController = require('./controllers/api/event'),
+		NotificationSenderController = require('./controllers/api/notificationSender');
 
-export default class Router {
+class Router {
 	constructor(app) {
 		app.get('/', (req, res) => IndexController.index(res));
 
@@ -13,3 +13,5 @@ export default class Router {
 		app.post('/api/notify-send', (req, res) => NotificationSenderController.send(res));
 	}
 }
+
+module.exports = Router;

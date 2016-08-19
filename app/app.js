@@ -1,10 +1,10 @@
 'use strict';
-import Router from './router';
-import express from 'express';
-import http from 'http';
-import i18n from 'i18n';
-import bodyParser from 'body-parser';
-import morgan from 'morgan';
+let Router = require('./router'),
+		express = require('express'),
+		http = require('http'),
+		i18n = require('i18n'),
+		bodyParser = require('body-)parser',
+		morgan = require('morgan');
 
 class App {
 	constructor() {

@@ -1,7 +1,7 @@
-import request from 'request';
+let request = require('request');
 
-export default class NotificationSender {
-  static send(res) {
+class NotificationSender {
+  send(res) {
     request({
       url: `http://localhost:8081/send`,
       method: `POST`,
@@ -10,3 +10,5 @@ export default class NotificationSender {
     });
   }
 }
+
+module.exports = new NotificationSender();

@@ -1,19 +1,19 @@
-import request from 'request';
+let request = require('request');
 
-export default class Event {
-  static all(res) {
+class Event {
+  all(res) {
     request.get('http://localhost:8080/events', (error, response, body) => {
       res.json(JSON.parse(body));
     });
   }
 
-  static show(res, id) {
+  show(res, id) {
     request.get(`http://localhost:8080/event/${id}`, (error, response, body) => {
       res.json(JSON.parse(body));
     });
   }
 
-  static create(res, event) {
+  create(res, event) {
     request({
       url: `http://localhost:8080/events/create`,
       method: `POST`,
@@ -23,3 +23,5 @@ export default class Event {
     });
   }
 }
+
+module.exports = new Event();
